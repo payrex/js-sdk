@@ -1,0 +1,20 @@
+language:
+  node_js
+node_js:
+  - "8"
+  - "7"
+  - "6"
+install:
+  - npm install
+  - npm install -g codecov istanbul
+script:
+  - npm run eslint
+  - npm run coverage
+  - npm run build
+  - ./node_modules/.bin/codecov
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
