@@ -10,7 +10,6 @@ install:
 script:
   - npm run eslint
   - npm run coverage
-  - npm run build
   - ./node_modules/.bin/codecov
 deploy:
   provider: npm
