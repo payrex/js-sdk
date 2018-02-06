@@ -1,4 +1,4 @@
-const fetch = require('whatwg-fetch');
+require('whatwg-fetch');
 const base64 = require('base-64');
 const PayrexSdkBase = require('payrex-js-sdk-base');
 
@@ -8,7 +8,8 @@ function base64Encode(str) {
 }
 
 const ASSIGN_OPTIONS = {
-  fetch,
+  fetch: global.fetch,
+  Headers: global.Headers,
   base64Encode: base64Encode,
 };
 
