@@ -4,11 +4,19 @@ node_js:
   - "8"
   - "7"
   - "6"
+dist: trusty # test chrome serverless: needs Ubuntu Trusty
+sudo: false  # test chrome serverless: no need for virtualization
+addons:
+  chrome: stable # test chrome serverless
+cache:
+  directories:
+    - node_modules
 install:
   - npm install
   - npm install -g codecov istanbul
 script:
   - npm run eslint
+  - npm run test:browser
   - npm run coverage
   - ./node_modules/.bin/codecov
 deploy:

@@ -1,6 +1,6 @@
 {
   "name": "payrex-js-sdk",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Payrex Javascript SDK",
   "keywords": [],
   "main": "src/node.js",
@@ -10,7 +10,10 @@
     "eslint:node": "eslint src/node.js",
     "eslint": "npm run eslint:browser && npm run eslint:node",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --reporter test -- -R spec",
-    "test": "mocha"
+    "build": "webpack",
+    "test:node": "mocha test/node",
+    "test:browser": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
+    "test": "npm run test:node && npm run test:browser"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,9 @@
   "homepage": "https://github.com/payrex/js-sdk#README",
   "devDependencies": {
     "assert": "^1.4.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
     "codecov": "^3.0.0",
     "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -31,7 +37,12 @@
     "husky": "^0.14.3",
     "istanbul": "^0.4.5",
     "json-server": "^0.12.1",
-    "mocha": "^5.0.0"
+    "karma": "^2.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^5.0.0",
+    "webpack": "^3.10.0"
   },
   "dependencies": {
     "base-64": "^0.1.0",

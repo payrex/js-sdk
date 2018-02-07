@@ -1,5 +1,5 @@
 const assert = require('assert');
-const PayrexSdk = require('../src/node');
+const PayrexSdk = require('../../src/node');
 const jsonServer = require('json-server');
 
 describe('PayrexSdk node', function () {
@@ -35,7 +35,7 @@ describe('PayrexSdk node', function () {
     before((done) => {
       const server = jsonServer.create();
       server.use(jsonServer.defaults());
-      server.use(jsonServer.router('test/data.json'));
+      server.use(jsonServer.router('test/node/data.json'));
       rest = server.listen(3078, done);
     });
     after((done) => rest.close(done));
