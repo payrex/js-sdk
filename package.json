@@ -9,7 +9,7 @@
     "eslint:browser": "eslint src/index.js",
     "eslint:node": "eslint src/node.js",
     "eslint": "npm run eslint:browser && npm run eslint:node",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha tets/node --reporter test -- -R spec",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha test/node --reporter test -- -R spec",
     "build": "webpack",
     "test:node": "mocha test/node",
     "test:browser": "npm run build && karma start --single-run --browsers MyHeadlessChrome karma.conf.js",
