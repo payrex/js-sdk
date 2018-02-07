@@ -9,11 +9,11 @@
     "eslint:browser": "eslint src/index.js",
     "eslint:node": "eslint src/node.js",
     "eslint": "npm run eslint:browser && npm run eslint:node",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --reporter test -- -R spec",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha tets/node --reporter test -- -R spec",
     "build": "webpack",
     "test:node": "mocha test/node",
     "test:browser": "karma start --single-run --browsers MyHeadlessChrome karma.conf.js",
-    "test": "npm run test:node && npm run test:browser"
+    "test": "npm run test:node && npm run build && npm run test:browser"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/payrex/js-sdk#README",
   "devDependencies": {
     "assert": "^1.4.1",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
