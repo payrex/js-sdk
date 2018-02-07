@@ -12,7 +12,7 @@
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --reporter test -- -R spec",
     "build": "webpack",
     "test:node": "mocha test/node",
-    "test:browser": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
+    "test:browser": "karma start --single-run --browsers MyHeadlessChrome karma.conf.js",
     "test": "npm run test:node && npm run test:browser"
   },
   "repository": {
