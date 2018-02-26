@@ -5,8 +5,7 @@ describe('PayrexSdk', () => {
     assert.strictEqual(typeof PayrexSdk, 'function')
     const sdk = new PayrexSdk({ baseUrl: 'http://localhost/' });
     assert.strictEqual(typeof sdk, 'object');
-    assert.strictEqual(sdk.publicKey, '');
-    assert.strictEqual(sdk.secretKey, '');
+    assert.strictEqual(sdk.credentials, '');
     assert.strictEqual(sdk.baseUrl, 'http://localhost/');
     assert.strictEqual(typeof sdk.get, 'function');
     assert.strictEqual(typeof sdk.post, 'function');
@@ -15,10 +14,8 @@ describe('PayrexSdk', () => {
   });
   it('should not throw errors', () => {
     new PayrexSdk();
-    new PayrexSdk({ publicKey: '' });
-    new PayrexSdk({ publicKey: 'AAA' });
-    new PayrexSdk({ secretKey: '' });
-    new PayrexSdk({ secretKey: 'AAA' });
+    new PayrexSdk({ credentials: '' });
+    new PayrexSdk({ credentials: 'AAA' });
     new PayrexSdk({ baseUrl: 'http://localhost' });
     new PayrexSdk({ baseUrl: 'http://localhost/' });
     new PayrexSdk({ baseUrl: 'https://localhost/' });
